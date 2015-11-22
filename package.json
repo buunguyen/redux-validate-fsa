@@ -1,0 +1,40 @@
+{
+  "name": "redux-validate-fsa",
+  "version": "0.1.0",
+  "description": "Redux middleware that validates if an action is a Flux Standard Action (FSA)",
+  "main": "lib/middleware.js",
+  "scripts": {
+    "prepublish": "rimraf lib && babel src --out-dir lib",
+    "test": "mocha --compilers js:babel/register 'test/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buunguyen/redux-validate-fsa.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "flux",
+    "action",
+    "fsa",
+    "flux-standard-action",
+    "middleware",
+    "redux-middleware"
+  ],
+  "author": "Buu Nguyen <buunguyen@gmail.com> (https://github.com/buunguyen)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/buunguyen/redux-validate-fsa/issues"
+  },
+  "homepage": "https://github.com/buunguyen/redux-validate-fsa#readme",
+  "devDependencies": {
+    "babel": "^5.8.34",
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4",
+    "rimraf": "^2.4.4",
+    "sinon": "^1.17.2"
+  },
+  "dependencies": {
+    "flux-standard-action": "^0.6.0"
+  }
+}
