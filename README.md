@@ -16,12 +16,12 @@ if (__DEV__) {
 }
 ```
 
-The `ignore` argument is for you to filter actions that should be skipped from the FSA check. This is useful if you have to deal with non-compliant actions from third-party libraries.
+The `ignore` argument specify actions that should be skipped from the FSA check. This is useful when dealing with non-compliant actions from third-party libraries.
 
-* If an array is given, it must be the array of action types that should be skipped from the FSA check.
-* If a function is given, it must return true for action that should be skipped from the FSA check.
+* If an array is given, it is the action types that should be skipped from the FSA check.
+* If a function is given, it must return true for actions that should be skipped from the FSA check.
 
-For example, if you use redux-simple-router, you should ignore the path-update actions, which are not FSA compliant.
+For example, if you use [redux-simple-router](https://github.com/jlongster/redux-simple-router), you should ignore its update-path actions, which are not FSA compliant.
 
 ```js
 import {UPDATE_PATH} from 'redux-simple-router'
@@ -29,7 +29,7 @@ const fsaMiddleware = require('redux-validate-fsa')([UPDATE_PATH])
 ```
 
 Notes:
-* This middleware is only useful in dev mode. So it should be included conditionally.
+* This middleware is only useful in dev mode. Therefore, it should be conditionally imported.
 * If you use [redux-thunk](https://github.com/gaearon/redux-thunk), make sure the thunk middleware is added before this middleware. Alternatively, you can use the `ignore` predicate to filter out actions that are thunks.
 
 ### Test

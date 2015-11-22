@@ -4,8 +4,8 @@ import {isFSA} from 'flux-standard-action'
  * Creates a Redux middleware that validates if supplied actions are FSA-compliant.
  *
  * @param {Array|Function} ignore (optional) - an array of action types
- * whose actions should *not* be validated or a predicate of type (Action) => bool 
- * that should return true if the action should *not* be validated.
+ * that should be skipped from the FSA check or a predicate of type (Action) => bool
+ * that should return true for actions that should be skipped from the FSA check.
  *
  * @returns {Function} A Redux middleware.
  */
