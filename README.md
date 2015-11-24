@@ -10,6 +10,8 @@ Redux middleware that validates if an action is a [Flux Standard Action](https:/
 
 ```js
 const middleware = [reduxThunk]
+
+// Only use in DEV mode
 if (__DEV__) {
   const fsaMiddleware = require('redux-validate-fsa')(ignore /* optional */)
   middleware.push(fsaMiddleware)
