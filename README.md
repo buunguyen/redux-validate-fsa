@@ -23,11 +23,11 @@ The `ignore` argument specify actions that should be skipped from the FSA check.
 * If an array is given, it is the action types that should be skipped from the FSA check.
 * If a function is given, it must return true for actions that should be skipped from the FSA check.
 
-For example, if you use [redux-simple-router](https://github.com/jlongster/redux-simple-router), you should ignore its update-path actions, which are not FSA compliant.
+For example, if you use [react-router-redux](https://github.com/reactjs/react-router-redux), you should ignore its update-path actions, which are not FSA compliant.
 
 ```js
-import {UPDATE_PATH} from 'redux-simple-router'
-const fsaMiddleware = require('redux-validate-fsa')([UPDATE_PATH])
+import {LOCATION_CHANGE} from 'react-router-redux'
+const fsaMiddleware = require('redux-validate-fsa')([LOCATION_CHANGE])
 ```
 
 Notes:
