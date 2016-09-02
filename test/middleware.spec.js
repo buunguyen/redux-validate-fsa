@@ -20,7 +20,7 @@ describe('fsa', () => {
       const next = (action) => {}
       assert.throws(() => {
         executeMiddleware(next)({type: 'action', nonFsaProperty: 0})
-      }, Error, `'action' must be an object and FSA compliant`)
+      }, Error, `action 'action' must be FSA compliant`)
     })
 
     it('should call next and return its result if action is an FSA', () => {
