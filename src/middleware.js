@@ -17,6 +17,8 @@ export default function fsa(ignore) {
     throw new Error(`'ignore' must be an array or function`)
   })()
 
+  const _global = typeof window === 'undefined' ? global : window
+
   return store => next => action => {
     if (_ignore(action) || (action && isFSA(action))) {
       return next(action)
@@ -24,7 +26,7 @@ export default function fsa(ignore) {
     const message = action && action.type
       ? `action '${action.type}' must be FSA compliant`
       : `'action' must be an object and FSA compliant`
-    if (global.console && global.console.warn) global.console.warn(message, action);
+    if (_global.console && _global.console.warn) _global.console.warn(message, action)
     throw new Error(message)
   }
 }
